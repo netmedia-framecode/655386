@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 12 Apr 2025 pada 07.29
+-- Waktu pembuatan: 22 Apr 2025 pada 13.25
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -101,22 +101,16 @@ CREATE TABLE `penerima_blt` (
   `nama_lengkap` varchar(100) DEFAULT NULL,
   `nik` char(16) DEFAULT NULL,
   `alamat` text DEFAULT NULL,
-  `rt_rw` varchar(10) DEFAULT NULL,
-  `desa_kelurahan` varchar(100) DEFAULT NULL,
-  `kecamatan` varchar(100) DEFAULT NULL,
-  `kabupaten_kota` varchar(100) DEFAULT NULL,
-  `status_pekerjaan` varchar(50) DEFAULT NULL,
-  `jumlah_tanggungan` int(11) DEFAULT NULL,
-  `penghasilan` char(20) DEFAULT NULL
+  `rt_rw` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `penerima_blt`
 --
 
-INSERT INTO `penerima_blt` (`id_penerima_blt`, `nama_lengkap`, `nik`, `alamat`, `rt_rw`, `desa_kelurahan`, `kecamatan`, `kabupaten_kota`, `status_pekerjaan`, `jumlah_tanggungan`, `penghasilan`) VALUES
-(2, 'Arlan', '5308', 'Jl. Bajawa', '034 / 011', 'Fatululi', 'Oebobo', 'Kupang', 'Wiraswasta', 1, '5000000'),
-(4, 'Itha', '53', 'Sabu', '12 / 34', 'tes', 'tes', 'Sabu', 'PNS', 1, '2500000');
+INSERT INTO `penerima_blt` (`id_penerima_blt`, `nama_lengkap`, `nik`, `alamat`, `rt_rw`) VALUES
+(2, 'Arlan', '5308', 'Jl. Bajawa', '034 / 011'),
+(4, 'Itha', '53', 'Sabu', '12 / 34');
 
 -- --------------------------------------------------------
 
@@ -174,8 +168,8 @@ CREATE TABLE `tabel_hasil` (
 --
 
 INSERT INTO `tabel_hasil` (`id_hasil`, `id_alternatif`, `nilai_total`) VALUES
-(43, 2, '88'),
-(44, 4, '87.5');
+(43, 2, '82'),
+(44, 4, '77.5');
 
 -- --------------------------------------------------------
 
@@ -556,7 +550,7 @@ ALTER TABLE `utilities`
 -- AUTO_INCREMENT untuk tabel `alternatif`
 --
 ALTER TABLE `alternatif`
-  MODIFY `id_alternatif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_alternatif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth`
@@ -574,7 +568,7 @@ ALTER TABLE `kriteria`
 -- AUTO_INCREMENT untuk tabel `penerima_blt`
 --
 ALTER TABLE `penerima_blt`
-  MODIFY `id_penerima_blt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_penerima_blt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `sub_kriteria`
@@ -586,19 +580,19 @@ ALTER TABLE `sub_kriteria`
 -- AUTO_INCREMENT untuk tabel `tabel_hasil`
 --
 ALTER TABLE `tabel_hasil`
-  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_nilai`
 --
 ALTER TABLE `tabel_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_normalisasi`
 --
 ALTER TABLE `tabel_normalisasi`
-  MODIFY `id_normalisasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_normalisasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

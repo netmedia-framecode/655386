@@ -49,42 +49,6 @@ require_once("../../templates/views_top.php"); ?>
                                                           echo $_POST['rt_rw'];
                                                         } ?>" class="form-control" id="rt_rw" placeholder="RT / RW" required>
               </div>
-              <div class="mb-3">
-                <label for="desa_kelurahan" class="form-label">Desa / Kelurahan</label>
-                <input type="text" name="desa_kelurahan" value="<?php if (isset($_POST['desa_kelurahan'])) {
-                                                                  echo $_POST['desa_kelurahan'];
-                                                                } ?>" class="form-control" id="desa_kelurahan" placeholder="Desa / Kelurahan" required>
-              </div>
-              <div class="mb-3">
-                <label for="kecamatan" class="form-label">Kecamatan</label>
-                <input type="text" name="kecamatan" value="<?php if (isset($_POST['kecamatan'])) {
-                                                              echo $_POST['kecamatan'];
-                                                            } ?>" class="form-control" id="kecamatan" placeholder="Kecamatan" required>
-              </div>
-              <div class="mb-3">
-                <label for="kabupaten_kota" class="form-label">Kabupaten / Kota</label>
-                <input type="text" name="kabupaten_kota" value="<?php if (isset($_POST['kabupaten_kota'])) {
-                                                                  echo $_POST['kabupaten_kota'];
-                                                                } ?>" class="form-control" id="kabupaten_kota" placeholder="Kabupaten / Kota" required>
-              </div>
-              <div class="mb-3">
-                <label for="status_pekerjaan" class="form-label">Status Pekerjaan</label>
-                <input type="text" name="status_pekerjaan" value="<?php if (isset($_POST['status_pekerjaan'])) {
-                                                                    echo $_POST['status_pekerjaan'];
-                                                                  } ?>" class="form-control" id="status_pekerjaan" placeholder="Status Pekerjaan" required>
-              </div>
-              <div class="mb-3">
-                <label for="jumlah_tanggungan" class="form-label">Jumlah Tanggungan</label>
-                <input type="number" name="jumlah_tanggungan" value="<?php if (isset($_POST['jumlah_tanggungan'])) {
-                                                                        echo $_POST['jumlah_tanggungan'];
-                                                                      } ?>" class="form-control" id="jumlah_tanggungan" placeholder="Jumlah Tanggungan" required>
-              </div>
-              <div class="mb-3">
-                <label for="penghasilan" class="form-label">Penghasilan</label>
-                <input type="number" name="penghasilan" value="<?php if (isset($_POST['penghasilan'])) {
-                                                                  echo $_POST['penghasilan'];
-                                                                } ?>" class="form-control" id="penghasilan" placeholder="Penghasilan" required>
-              </div>
               <div class="mb-3 hstack gap-2 justify-content-left">
                 <a href="penerima-blt" class="btn btn-success">Kembali</a>
                 <button type="submit" name="add_penerima_blt" class="btn btn-primary">Tambah</button>

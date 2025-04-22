@@ -36,11 +36,7 @@ if($data_auth['model']==1){?>
                   <button type="submit" name="login" class="btn btn-lg btn-primary w-100">Login</button>
                 </div>
               </form>
-              <div class="mt-5 text-muted">
-                <span> Belum punya akun?</span>
-                <a href="register" class="fw-bold">Buat Akun</a>
-              </div>
-              <div class="text-muted">
+              <div class="text-muted mt-5">
                 <span> Anda ingin kembali ke tampilan awal?</span>
                 <a href="../" class="fw-bold">Beranda</a>
               </div>
@@ -87,11 +83,7 @@ if($data_auth['model']==1){?>
               <button type="submit" name="login" class="btn btn-lg btn-primary w-100">Masuk</button>
             </div>
           </form>
-          <div class="mt-5 text-muted">
-            <span> Belum punya akun?</span>
-            <a href="register" class="fw-bold">Buat Akun</a>
-          </div>
-          <div class="text-muted">
+          <div class="text-muted mt-5">
             <span> Anda ingin kembali ke tampilan awal?</span>
             <a href="../" class="fw-bold">Beranda</a>
           </div>

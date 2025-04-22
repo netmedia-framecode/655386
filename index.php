@@ -61,14 +61,14 @@ require_once("templates/top.php"); ?>
       <div class="border center color-2"></div>
       <h1>Penerima BLT</h1>
     </div>
-    <div class="row">
+    <div class="row mb-5">
       <div class="col-md-12 col-sm-12">
         <div class="card">
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-hover text-center mb-0" style="color: #000;" id="dataTable">
                 <thead>
-                  <tr class="border-b">
+                  <tr>
                     <th style="text-align: center;">Rank</th>
                     <th style="text-align: center;">Nama Penerima BLT</th>
                     <th style="text-align: center;">Penghasilan</th>
@@ -82,16 +82,16 @@ require_once("templates/top.php"); ?>
                 <tbody>
                   <?php if (mysqli_num_rows($cetak) > 0) {
                     $no = 1;
-                    while ($row = mysqli_fetch_assoc($cetak)) { ?>
+                    while ($data = mysqli_fetch_assoc($cetak)) { ?>
                       <tr>
                         <th style="text-align: center;"><?= $no++ ?></th>
-                        <th><?= $row['nama_lengkap'] ?></th>
-                        <th style="text-align: center;">Rp.<?= number_format($row['penghasilan']) ?></th>
-                        <th style="text-align: center;"><?= $row['pekerjaan'] ?></th>
-                        <th style="text-align: center;"><?= $row['tanggungan'] ?></th>
-                        <th><?= $row['luas_tanah'] ?></th>
-                        <th style="text-align: center;"><?= $row['umur'] ?> tahun</th>
-                        <th style="text-align: center;"><?= $row['nilai_total'] ?></th>
+                        <th><?= $data['nama_lengkap'] ?></th>
+                        <th style="text-align: center;"><?= $data['penghasilan'] ?></th>
+                        <th style="text-align: center;"><?= $data['pekerjaan'] ?></th>
+                        <th style="text-align: center;"><?= $data['tanggungan'] ?></th>
+                        <th><?= $data['luas_tanah'] ?></th>
+                        <th style="text-align: center;"><?= $data['umur'] ?> tahun</th>
+                        <th style="text-align: center;"><?= $data['nilai_total'] ?></th>
                       </tr>
                   <?php }
                   } ?>

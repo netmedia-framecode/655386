@@ -54,12 +54,6 @@ require_once("../../templates/views_top.php"); ?>
                     <th class="text-center">NIK</th>
                     <th class="text-center">Alamat</th>
                     <th class="text-center">RT / RW</th>
-                    <th class="text-center">Desa / Kelurahan</th>
-                    <th class="text-center">Kecamatan</th>
-                    <th class="text-center">Kabupaten / Kota</th>
-                    <th class="text-center">Status Pekerjaan</th>
-                    <th class="text-center">Jumlah Tanggungan</th>
-                    <th class="text-center">Penghasilan</th>
                     <th class="text-center">Aksi</th>
                   </tr>
                 </thead>
@@ -71,12 +65,6 @@ require_once("../../templates/views_top.php"); ?>
                       <td><?= $data['nik'] ?></td>
                       <td><?= $data['alamat'] ?></td>
                       <td><?= $data['rt_rw'] ?></td>
-                      <td><?= $data['desa_kelurahan'] ?></td>
-                      <td><?= $data['kecamatan'] ?></td>
-                      <td><?= $data['kabupaten_kota'] ?></td>
-                      <td><?= $data['status_pekerjaan'] ?></td>
-                      <td><?= $data['jumlah_tanggungan'] ?> orang</td>
-                      <td>Rp.<?= number_format($data['penghasilan']) ?></td>
                       <td>
                         <div class="hstack gap-2 justify-content-center">
                           <?php $checkAlternatif = mysqli_query($conn, "SELECT * FROM alternatif WHERE id_penerima_blt='$data[id_penerima_blt]'");

@@ -143,7 +143,7 @@ require_once("../templates/views_top.php"); ?>
                       <tr>
                         <th><?= $no++ ?></th>
                         <th><?= $row['nama_lengkap'] ?></th>
-                        <th>Rp.<?= number_format($row['penghasilan']) ?></th>
+                        <th><?= $row['penghasilan'] ?></th>
                         <th><?= $row['pekerjaan'] ?></th>
                         <th><?= $row['tanggungan'] ?></th>
                         <th><?= $row['luas_tanah'] ?></th>

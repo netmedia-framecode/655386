@@ -1242,11 +1242,11 @@ if (isset($_SESSION["project_spk_blt"]["users"])) {
   function penerima_blt($conn, $data, $action)
   {
     if ($action == "insert") {
-      $sql = "INSERT INTO penerima_blt (nama_lengkap,nik,alamat,rt_rw,desa_kelurahan,kecamatan,kabupaten_kota,status_pekerjaan,jumlah_tanggungan,penghasilan) VALUES ('$data[nama_lengkap]','$data[nik]','$data[alamat]','$data[rt_rw]','$data[desa_kelurahan]','$data[kecamatan]','$data[kabupaten_kota]','$data[status_pekerjaan]','$data[jumlah_tanggungan]','$data[penghasilan]')";
+      $sql = "INSERT INTO penerima_blt (nama_lengkap,nik,alamat,rt_rw) VALUES ('$data[nama_lengkap]','$data[nik]','$data[alamat]','$data[rt_rw]')";
     }
 
     if ($action == "update") {
-      $sql = "UPDATE penerima_blt SET nama_lengkap='$data[nama_lengkap]',nik='$data[nik]',alamat='$data[alamat]',rt_rw='$data[rt_rw]',desa_kelurahan='$data[desa_kelurahan]',kecamatan='$data[kecamatan]',kabupaten_kota='$data[kabupaten_kota]',status_pekerjaan='$data[status_pekerjaan]',jumlah_tanggungan='$data[jumlah_tanggungan]',penghasilan='$data[penghasilan]' WHERE id_penerima_blt='$data[id_penerima_blt]'";
+      $sql = "UPDATE penerima_blt SET nama_lengkap='$data[nama_lengkap]',nik='$data[nik]',alamat='$data[alamat]',rt_rw='$data[rt_rw]' WHERE id_penerima_blt='$data[id_penerima_blt]'";
     }
 
     if ($action == "delete") {

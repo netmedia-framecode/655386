@@ -119,13 +119,7 @@ CREATE TABLE
     nama_lengkap VARCHAR(100),
     nik CHAR(16) UNIQUE,
     alamat TEXT,
-    rt_rw VARCHAR(10),
-    desa_kelurahan VARCHAR(100),
-    kecamatan VARCHAR(100),
-    kabupaten_kota VARCHAR(100),
-    status_pekerjaan VARCHAR(50),
-    jumlah_tanggungan INT,
-    penghasilan CHAR(20)
+    rt_rw VARCHAR(10)
     -- status_penerima ENUM ('Layak', 'Tidak Layak')
   );
 
