@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 13 Bulan Mei 2025 pada 15.07
+-- Waktu pembuatan: 13 Bulan Mei 2025 pada 14.47
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -168,8 +168,8 @@ CREATE TABLE `tabel_hasil` (
 --
 
 INSERT INTO `tabel_hasil` (`id_hasil`, `id_alternatif`, `nilai_total`) VALUES
-(43, 2, '88'),
-(44, 4, '87.5');
+(43, 2, '82'),
+(44, 4, '77.5');
 
 -- --------------------------------------------------------
 
@@ -267,6 +267,146 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `user_access_menu`
+--
+
+CREATE TABLE `user_access_menu` (
+  `id_access_menu` int(11) NOT NULL,
+  `id_role` int(11) DEFAULT NULL,
+  `id_menu` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `user_access_menu`
+--
+
+INSERT INTO `user_access_menu` (`id_access_menu`, `id_role`, `id_menu`) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 1, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_access_sub_menu`
+--
+
+CREATE TABLE `user_access_sub_menu` (
+  `id_access_sub_menu` int(11) NOT NULL,
+  `id_role` int(11) DEFAULT NULL,
+  `id_sub_menu` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `user_access_sub_menu`
+--
+
+INSERT INTO `user_access_sub_menu` (`id_access_sub_menu`, `id_role`, `id_sub_menu`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 1, 5),
+(6, 1, 6),
+(7, 1, 7),
+(8, 1, 8),
+(9, 2, 3),
+(10, 2, 4),
+(11, 2, 5),
+(13, 2, 6),
+(14, 2, 7),
+(15, 2, 8);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_menu`
+--
+
+CREATE TABLE `user_menu` (
+  `id_menu` int(11) NOT NULL,
+  `icon` varchar(50) DEFAULT NULL,
+  `menu` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `user_menu`
+--
+
+INSERT INTO `user_menu` (`id_menu`, `icon`, `menu`) VALUES
+(1, 'bi bi-people', 'User Management'),
+(2, 'bi bi-database', 'Data Master');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_role`
+--
+
+CREATE TABLE `user_role` (
+  `id_role` int(11) NOT NULL,
+  `role` varchar(35) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `user_role`
+--
+
+INSERT INTO `user_role` (`id_role`, `role`) VALUES
+(1, 'Developer'),
+(2, 'Administrator'),
+(3, 'Member');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_status`
+--
+
+CREATE TABLE `user_status` (
+  `id_status` int(11) NOT NULL,
+  `status` varchar(35) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `user_status`
+--
+
+INSERT INTO `user_status` (`id_status`, `status`) VALUES
+(1, 'Active'),
+(2, 'No Active');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_sub_menu`
+--
+
+CREATE TABLE `user_sub_menu` (
+  `id_sub_menu` int(11) NOT NULL,
+  `id_menu` int(11) DEFAULT NULL,
+  `id_active` int(11) DEFAULT 2,
+  `title` varchar(50) DEFAULT NULL,
+  `url` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `user_sub_menu`
+--
+
+INSERT INTO `user_sub_menu` (`id_sub_menu`, `id_menu`, `id_active`, `title`, `url`) VALUES
+(1, 1, 1, 'Users', 'user-management/users'),
+(2, 1, 1, 'Role', 'user-management/role'),
+(3, 2, 1, 'Kriteria', 'data-master/kriteria'),
+(4, 2, 1, 'Sub Kriteria', 'data-master/sub-kriteria'),
+(5, 2, 1, 'Penerima BLT', 'data-master/penerima-blt'),
+(6, 2, 1, 'Penilaian', 'data-master/penilaian'),
+(7, 2, 1, 'Perhitungan', 'data-master/perhitungan'),
+(8, 2, 1, 'Laporan', 'data-master/laporan');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `utilities`
 --
 
@@ -355,6 +495,48 @@ ALTER TABLE `users`
   ADD KEY `id_active` (`id_active`);
 
 --
+-- Indeks untuk tabel `user_access_menu`
+--
+ALTER TABLE `user_access_menu`
+  ADD PRIMARY KEY (`id_access_menu`),
+  ADD KEY `id_role` (`id_role`),
+  ADD KEY `id_menu` (`id_menu`);
+
+--
+-- Indeks untuk tabel `user_access_sub_menu`
+--
+ALTER TABLE `user_access_sub_menu`
+  ADD PRIMARY KEY (`id_access_sub_menu`),
+  ADD KEY `id_role` (`id_role`),
+  ADD KEY `id_sub_menu` (`id_sub_menu`);
+
+--
+-- Indeks untuk tabel `user_menu`
+--
+ALTER TABLE `user_menu`
+  ADD PRIMARY KEY (`id_menu`);
+
+--
+-- Indeks untuk tabel `user_role`
+--
+ALTER TABLE `user_role`
+  ADD PRIMARY KEY (`id_role`);
+
+--
+-- Indeks untuk tabel `user_status`
+--
+ALTER TABLE `user_status`
+  ADD PRIMARY KEY (`id_status`);
+
+--
+-- Indeks untuk tabel `user_sub_menu`
+--
+ALTER TABLE `user_sub_menu`
+  ADD PRIMARY KEY (`id_sub_menu`),
+  ADD KEY `id_menu` (`id_menu`),
+  ADD KEY `id_active` (`id_active`);
+
+--
 -- Indeks untuk tabel `utilities`
 --
 ALTER TABLE `utilities`
@@ -419,6 +601,42 @@ ALTER TABLE `users`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT untuk tabel `user_access_menu`
+--
+ALTER TABLE `user_access_menu`
+  MODIFY `id_access_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `user_access_sub_menu`
+--
+ALTER TABLE `user_access_sub_menu`
+  MODIFY `id_access_sub_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT untuk tabel `user_menu`
+--
+ALTER TABLE `user_menu`
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `user_role`
+--
+ALTER TABLE `user_role`
+  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `user_status`
+--
+ALTER TABLE `user_status`
+  MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `user_sub_menu`
+--
+ALTER TABLE `user_sub_menu`
+  MODIFY `id_sub_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT untuk tabel `utilities`
 --
 ALTER TABLE `utilities`
@@ -466,6 +684,27 @@ ALTER TABLE `tabel_normalisasi`
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`id_role`) REFERENCES `user_role` (`id_role`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`id_active`) REFERENCES `user_status` (`id_status`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Ketidakleluasaan untuk tabel `user_access_menu`
+--
+ALTER TABLE `user_access_menu`
+  ADD CONSTRAINT `user_access_menu_ibfk_1` FOREIGN KEY (`id_role`) REFERENCES `user_role` (`id_role`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `user_access_menu_ibfk_2` FOREIGN KEY (`id_menu`) REFERENCES `user_menu` (`id_menu`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `user_access_sub_menu`
+--
+ALTER TABLE `user_access_sub_menu`
+  ADD CONSTRAINT `user_access_sub_menu_ibfk_1` FOREIGN KEY (`id_role`) REFERENCES `user_role` (`id_role`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `user_access_sub_menu_ibfk_2` FOREIGN KEY (`id_sub_menu`) REFERENCES `user_sub_menu` (`id_sub_menu`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `user_sub_menu`
+--
+ALTER TABLE `user_sub_menu`
+  ADD CONSTRAINT `user_sub_menu_ibfk_1` FOREIGN KEY (`id_menu`) REFERENCES `user_menu` (`id_menu`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_sub_menu_ibfk_2` FOREIGN KEY (`id_active`) REFERENCES `user_status` (`id_status`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

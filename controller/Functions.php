@@ -674,7 +674,7 @@ if (!isset($_SESSION["project_spk_blt"]["users"])) {
   function login($conn, $data)
   {
     // check account
-    $checkAccount = mysqli_query($conn, "SELECT * FROM users JOIN user_role ON users.id_role=user_role.id_role WHERE users.email='$data[email]'");
+    $checkAccount = mysqli_query($conn, "SELECT * FROM users WHERE email='$data[email]'");
     if (mysqli_num_rows($checkAccount) == 0) {
       $message = "Maaf, akun yang anda masukan belum terdaftar.";
       $message_type = "danger";
@@ -685,8 +685,8 @@ if (!isset($_SESSION["project_spk_blt"]["users"])) {
       if (password_verify($data['password'], $row["password"])) {
         $_SESSION["project_spk_blt"]["users"] = [
           "id" => $row["id_user"],
-          "id_role" => $row["id_role"],
-          "role" => $row["role"],
+          "id_role" => 2,
+          "role" => "admin",
           "email" => $row["email"],
           "name" => $row["name"],
           "image" => $row["image"]

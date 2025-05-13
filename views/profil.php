@@ -39,16 +39,6 @@ require_once("../templates/views_top.php"); ?>
                       <th scope="col" class="text-right">:</th>
                       <th scope="col"><?= $data['email'] ?></th>
                     </tr>
-                    <tr>
-                      <th scope="col">Status</th>
-                      <th scope="col" class="text-right">:</th>
-                      <th scope="col"><?= $data['status'] ?></th>
-                    </tr>
-                    <tr>
-                      <th scope="col">Role</th>
-                      <th scope="col" class="text-right">:</th>
-                      <th scope="col"><?= $data['role'] ?></th>
-                    </tr>
                   </thead>
                 </table>
                 <p class="card-text"><small class="text-muted">Terakhir diperbarui

@@ -99,3 +99,4 @@
 [2025-04-09 23:40:08] Error [2]: Undefined variable $1 in /Applications/XAMPP/xamppfiles/htdocs/apps/website/tugas/spk_blt/views/data-master/perhitungan.php on line 184
 [2025-04-09 23:40:10] Error [2]: Undefined variable $1 in /Applications/XAMPP/xamppfiles/htdocs/apps/website/tugas/spk_blt/views/data-master/perhitungan.php on line 184
 [2025-04-10 00:22:31] Error [2]: Undefined variable $mpdf in /Applications/XAMPP/xamppfiles/htdocs/apps/website/tugas/spk_blt/views/data-master/laporan.php on line 110
+[2025-05-13 14:53:59] Error [2]: Undefined array key "status" in /Applications/XAMPP/xamppfiles/htdocs/apps/website/tugas/spk_blt/views/profil.php on line 45
